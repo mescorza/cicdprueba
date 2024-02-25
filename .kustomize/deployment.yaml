@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-  name: prueba-gha
+  name: cicdprueba
 spec:
   replicas: 3
   selector:
     matchLabels:
-      name: prueba-gha
+      name: cicdprueba
   template:
     metadata:
       labels:
-        name: prueba-gha
+        name: cicdprueba
     spec:
       containers:
-      - name: prueba-gha
-        image: pablokbs/prueba-gha
+      - name: cicdprueba
+        image: mescorza/cicdprueba
         ports:
         - containerPort: 80
           name: http
