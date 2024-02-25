@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 on: push:
 name: deploy
 jobs:
@@ -16,4 +17,24 @@ jobs:
           tag-with-cha: true
           tags: ${{ github.sha }} 
 
+=======
+on: push:
+name: deploy
+jobs:
+  deploy:
+    name: deploy to cluster
+    runs-on: ubuntu-latest
+    steps: 
+      . uses: actions/checkout@master
+      - name: build and push to docker
+        uses: docker/build-push-actions@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: ${{ github.repository }}
+          tag-with-ref: true
+          tag-with-cha: true
+          tags: ${{ github.sha }} 
+
+>>>>>>> bb9fc57b0ce874479a0da77a3319f6f773a05fef
   
