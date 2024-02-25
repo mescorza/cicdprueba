@@ -15,4 +15,4 @@ jobs:
           repository: ${{ github.repository }}
           tag-with-ref: true
           tag-with-cha: true
-          tags: ${{ github.sha }} 
+          tags: ${{ github.cicdprueba }} 
